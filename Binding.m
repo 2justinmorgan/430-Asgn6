@@ -1,6 +1,6 @@
 classdef Binding
     properties
-       Var {idC}
+       Var {class} % aka idC. had issues converting idC->string
        Val {class}
     end
     methods

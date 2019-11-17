@@ -1,6 +1,6 @@
 classdef primopV
     properties
-       op {sym}
+       op {class}
     end
     methods
         function obj = primopV(constrOp)

@@ -14,3 +14,5 @@ if nargin == 2
             value = "not implemented yet";
     end 
 end
+
+assert(interp(numC(3), makeTopEnv()) == numV(2));
