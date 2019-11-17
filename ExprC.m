@@ -1,6 +1,6 @@
 classdef ExprC < numC & strC & boolC & idC & ifC & lamC & appC
     properties
-        expr {class}
+        expr {class} % aka ExprC
     end
     methods
         function obj = ExprC(constrExpr)
