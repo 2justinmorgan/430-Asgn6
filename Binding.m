@@ -1,6 +1,6 @@
 classdef Binding
     properties
-       Var {string}
+       Var {idC}
        Val {class}
     end
     methods

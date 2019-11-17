@@ -1,3 +1,5 @@
 function s = twice(x)
-    s = x * 2; 
+    if nargin == 1
+        s = x * 2; 
+    end
 end

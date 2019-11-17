@@ -1,11 +1,11 @@
 classdef numC
     properties
-       Value {double}
+       number {double}
     end
     methods
-        function obj = numC(number)
+        function obj = numC(val)
             if nargin == 1
-                obj.Value = number;
+                obj.number = val;
             end
         end
     end

@@ -1,5 +1,6 @@
 classdef ifC
     properties
+        % class aka "ExprC"
        testVal {class}
        thenVal {class}
        elseVal {class}
