@@ -7,7 +7,11 @@ if nargin == 2
             value = strV(expr.str);
         case 'idC'
             % lookup env
-            value = expr.sym;
+            % value = expr.sym;
+            if expr.isValid
+            else
+                error("The given idC was invalid")
+            end
         case 'boolC'
             value = boolV(expr.bool);
         otherwise

@@ -8,13 +8,9 @@ classdef idC
                 obj.symbstr = val;
             end
         end
-        function valid = isValid(obj)
-            invalid=["var", "if", "lam", "="]
-            if ~any(strcmp(invalid, obj.symbstr))
-                valid = true
-            else
-                valid = false
-            end
+        function valid = isIdcValid(obj)
+            invalid={"var", "if", "lam", "equal
+            if ~any(strcmp(
         end
     end
 end
