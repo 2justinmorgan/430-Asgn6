@@ -1,2 +1,3 @@
-function value = lookup(env)
+function value = lookup(env, s)
+    value = env(s)
 end

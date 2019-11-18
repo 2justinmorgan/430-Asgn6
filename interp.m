@@ -6,9 +6,8 @@ if nargin == 2
         case 'strC'
             value = strV(expr.str);
         case 'idC'
-            % lookup env
-            % value = expr.sym;
             if expr.isValid
+                value = lookup(env, expr.symbstr)
             else
                 error("The given idC was invalid")
             end

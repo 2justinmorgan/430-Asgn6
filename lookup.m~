@@ -1,0 +1,16 @@
+function value = lookup(env, val)
+    value = env(val)
+%     for bind = env
+%         switch class(bind)
+%             case 'Binding'
+%                 switch class(bind.Var)
+%                     case 'idC'
+%                         if isequal(bind.Var.symbstr, val)
+%                             value = bind.Val
+%                         end
+%                     otherwise
+%                         error("Binding doesn't start at an idC")
+%                 end
+%         end
+%     end
+end
