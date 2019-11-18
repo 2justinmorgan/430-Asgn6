@@ -15,10 +15,18 @@ if nargin == 2
             funval = interp(expr.func, env);
             switch class (funval)
                 case 'cloV'
-                    newEnv = extendEnv(env, funval.clovArgs, expr.appArgs)
-                    interp(funval.body, newEnv)
+                    interpretedArgs = [];
+                    for indx = expr.appArgs
+                        interpretedArgs = [interpretedArgs, interp(indx, env)];
+                    end
+                    newEnv = extendEnv(env, funval.clovArgs, interpretedArgs);
+                    value = interp(funval.body, newEnv)
                 case 'primopV'
-                    %TODO
+                    interpretedArgs = [];
+                    for indx = expr.appArgs
+                        interpretedArgs = [interpretedArgs, interp(indx, env)];
+                    end
+                    value = evaluatePrimop(funval.op, interpretedArgs);
                 otherwise
                     error("Unexpected function call format")
             end
