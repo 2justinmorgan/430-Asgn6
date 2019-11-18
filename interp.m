@@ -6,13 +6,22 @@ if nargin == 2
         case 'strC'
             value = strV(expr.str);
         case 'idC'
-            if expr.isValid
-                value = lookup(env, expr.symbstr)
-            else
-                error("The given idC was invalid")
-            end
+            value = lookup(env, expr.symbstr);
         case 'boolC'
             value = boolV(expr.bool);
+        case 'lamC'
+            value = cloV(expr.lamArgs, expr.body, env);
+        case 'appC'
+            funval = interp(expr.func, env);
+            switch class (funval)
+                case 'cloV'
+                    newEnv = extendEnv(env, funval.clovArgs, expr.appArgs)
+                    interp(funval.body, newEnv)
+                case 'primopV'
+                    %TODO
+                otherwise
+                    error("Unexpected function call format")
+            end
         otherwise
             value = "not implemented yet";
     end 
