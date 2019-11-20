@@ -1,8 +1,7 @@
 function runTests()
     if nargin == 0
-        a = numC(4);
-        b = numC(4);
-        checkEqual(a, b)
+        a = numC(a
+        checkEqual(numC(4), numC(4))
         checkEqual(strC("hello"), strC ("hello"))
         checkEqual(boolC(true), boolC(true))
         
