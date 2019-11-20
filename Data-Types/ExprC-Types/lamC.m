@@ -1,4 +1,4 @@
-classdef lamC
+classdef lamC < handle
     properties
        lamArgs {class} % should be of type "cell" or an array
        body {class}

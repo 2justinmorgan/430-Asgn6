@@ -1,4 +1,4 @@
-classdef boolV
+classdef boolV < handle
     properties
        bool {boolean}
     end

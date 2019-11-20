@@ -1,4 +1,4 @@
-classdef cloV
+classdef cloV < handle
     properties
        clovArgs {class} % should be of type "cell" or an array
        body {class}

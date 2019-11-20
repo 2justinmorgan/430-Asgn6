@@ -1,4 +1,4 @@
-classdef primopV
+classdef primopV < handle
     properties
        op {class}
     end

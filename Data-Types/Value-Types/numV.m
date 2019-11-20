@@ -1,4 +1,4 @@
-classdef numV
+classdef numV < handle
     properties
        number {double}
     end

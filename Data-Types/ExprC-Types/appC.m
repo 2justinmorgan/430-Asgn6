@@ -1,4 +1,4 @@
-classdef appC
+classdef appC < handle
     properties
         func {class} % ExprC
         appArgs {class} % Listof ExprC

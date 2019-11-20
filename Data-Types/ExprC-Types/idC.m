@@ -1,4 +1,4 @@
-classdef idC
+classdef idC < handle
     properties
        symbstr {string} % couldn't be sym because i.e. '+' is not allowed
     end

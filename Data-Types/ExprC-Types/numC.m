@@ -1,4 +1,4 @@
-classdef numC
+classdef numC < handle
     properties
        number {double}
     end
