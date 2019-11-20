@@ -6,5 +6,6 @@ function runTests()
         checkEqual(interp(appC(idC("+"), [numC(4), numC(2)]), makeTopEnv()), numV(6));
         checkEqual(interp(appC(lamC(["a", "b"], idC("b")), [numC(4), numC(2)]), makeTopEnv()), numV(2));
         checkEqual(interp(appC(lamC(["a", "b", "c", "d"], idC("b")), [numC(4), numC(2), numC(5), numC(4)]), makeTopEnv()), numV(2));
+        checkEqual(interp(appC(lamC(["a", "b", "c", "d"], appC(idC("+"), [idC("a"), idC("b")])), [numC(4), numC(2), numC(5), numC(4)]), makeTopEnv()), numV(6));
     end
 end
