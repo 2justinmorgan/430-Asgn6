@@ -1,4 +1,4 @@
-classdef ifC
+classdef ifC < handle
     properties
         % class aka "ExprC"
        testVal {class}

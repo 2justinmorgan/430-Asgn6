@@ -1,4 +1,4 @@
-classdef strC
+classdef strC < handle
     properties
        str {string}
     end
