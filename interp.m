@@ -17,11 +17,9 @@ if nargin == 2
                 case 'cloV'
                     interpretedArgs = {};
                     for indx = expr.appArgs
-                        interpretedArgs = {interpretedArgs, interp(indx, env)};
+                        interpretedArgs{end+1} = interp(indx, env);
                     end
                     newEnv = extendEnv(env, funval.clovArgs, interpretedArgs);
-                    disp(keys(newEnv));
-                    disp(values(newEnv));
                     value = interp(funval.body, newEnv);
                 case 'primopV'
                     interpretedArgs = [];

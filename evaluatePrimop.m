@@ -5,7 +5,7 @@ switch(operation)
             case 'numV'
                 switch class(interpretedArgs(1))
                     case 'numV'
-                        value = numV(interpretedArgs(1).number + interpretedArgs(2).number)
+                        value = numV(interpretedArgs(1).number + interpretedArgs(2).number);
                     otherwise
                         error("Second addition term must be an int");
                 end
