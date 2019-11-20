@@ -1,18 +1,18 @@
-function  value = evaluatePrimop(operation, interpretedArgs)
-switch(operation)
-    case "+"
-        switch class(interpretedArgs(1))
-            case 'numV'
-                switch class(interpretedArgs(1))
-                    case 'numV'
-                        value = numV(interpretedArgs(1).number + interpretedArgs(2).number);
-                    otherwise
-                        error("Second addition term must be an int");
-                end
-            otherwise
-                error("First addition term must be an int");
+function  value = evaluatePrimop(op, interpretedArgs)
+if nargin == 2
+    if (ismember(op, ["+","-","*","/","<="]))
+        value = numopV(op, interpretedArgs);
+    end
+    if (ismember(op, ["equal?"]))
+        leftClass = class(interpretedArgs{1});
+        rightClass = class(interpretedArgs{2});
+        if (ismember(leftClass, ["primopV","cloV"]) || ...
+            ismember(rightClass, ["primopV","cloV"]))
+            disp("here");
+            disp(interpretedArgs(1));
+            disp(interpretedArgs(2));
+            error("Can not use primopV or cloV with 'equal?' op");
         end
-    otherwise
-        error("No such Primop Case");
-end
+        value = boolV(isequal(interpretedArgs(1), interpretedArgs(2)));
+    end
 end

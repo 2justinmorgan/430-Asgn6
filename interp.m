@@ -13,24 +13,19 @@ if nargin == 2
             value = cloV(expr.lamArgs, expr.body, env);
         case 'appC'
             funval = interp(expr.func, env);
+            interpretedArgs = evalArgs(expr.appArgs, env);
             switch class (funval)
                 case 'cloV'
-                    interpretedArgs = {};
-                    for indx = expr.appArgs
-                        interpretedArgs{end+1} = interp(indx, env);
-                    end
-                    newEnv = extendEnv(env, funval.clovArgs, interpretedArgs);
+                    newEnv = extendEnv(funval.env, funval.clovArgs, interpretedArgs);
                     value = interp(funval.body, newEnv);
                 case 'primopV'
-                    interpretedArgs = [];
-                    for indx = expr.appArgs
-                        interpretedArgs = [interpretedArgs, interp(indx, env)];
-                    end
                     value = evaluatePrimop(funval.op, interpretedArgs);
                 otherwise
+                    disp(funval);
                     error("Unexpected function call format");
             end
         otherwise
-            value = "not implemented yet";
+            disp(expr);
+            error("invalid ExprC");
     end 
 end

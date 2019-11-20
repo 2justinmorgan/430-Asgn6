@@ -1,0 +1,8 @@
+function  value = evaluatePrimop(operation, interpretedArgs)
+if (ismember(operation, ["+","-","*","/","<="]))
+    value = numopV(operation, interpedArgs);
+end
+if (ismember(operation, ["equal?"]))
+    if (class(
+    value = 
+end
