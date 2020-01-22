@@ -1,3 +1,5 @@
+(the code in this repo is public as group work permits)
+
 This repo contains a MATLAB implemented interpreter for a custom programming language, RGME.
 
 NOTE: this interpreter requires a separate parser to create the concrete expressions (ExprC) data types used in this interpreter. 
